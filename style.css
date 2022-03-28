@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Outfit", sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  background-color: var(--main-bg);
+}
+
+.line {
+  height: 1px;
+  background-color: var(--line);
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+}
+
+.card {
+  width: 75%;
+  max-width: 22rem;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.card__image {
+  position: relative;
+  cursor: pointer;
+}
+
+.card__image::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(178, 100%, 50%, 0.4);
+  border-radius: 10px;
+  opacity: 0;
+}
+
+.card__image:hover::after {
+  opacity: 1;
+}
+
+.view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+}
+
+.card__image:hover .view {
+  display: block;
+}
+
+.card__image img {
+  border-radius: 10px;
+}
+
+.card__details {
+  color: var(--White);
+  padding-block: 1.5rem 1rem;
+}
+
+.card__details h1 {
+  font-size: 1.385rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card__details h1:hover {
+  color: var(--Cyan);
+}
+
+.card__details p {
+  margin-top: 0.5rem;
+  color: var(--Soft-blue);
+  font-weight: 300;
+}
+
+.pricing {
+  justify-content: space-between;
+  margin-block-end: 0.9rem;
+}
+
+.pricing .left {
+  color: var(--Cyan);
+}
+
+.pricing .right {
+  color: var(--Soft-blue);
+}
+
+.avtar {
+  justify-content: flex-start;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.avtar img {
+  width: 12%;
+  border-radius: 50%;
+  border: 1px solid var(--White);
+}
+
+.avtar h2 {
+  color: var(--Soft-blue);
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.avtar h2 span {
+  color: var(--White);
+  cursor: pointer;
+}
+
+.avtar h2 span:hover {
+  color: var(--Cyan);
+}
